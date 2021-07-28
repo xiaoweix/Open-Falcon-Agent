@@ -12,20 +12,21 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package g
+package utils
 
-import log "github.com/sirupsen/logrus"
+import (
+	"sort"
+)
 
-func InitLog(level string) (err error) {
-	switch level {
-	case "info":
-		log.SetLevel(log.InfoLevel)
-	case "debug":
-		log.SetLevel(log.DebugLevel)
-	case "warn":
-		log.SetLevel(log.WarnLevel)
-	default:
-		log.Fatal("log conf only allow [info, debug, warn], please check your confguire")
+// TODO 以下的部分, 考虑放到公共组件库
+func KeysOfMap(m map[string]string) []string {
+	keys := make(sort.StringSlice, len(m))
+	i := 0
+	for key := range m {
+		keys[i] = key
+		i++
 	}
-	return
+
+	keys.Sort()
+	return []string(keys)
 }

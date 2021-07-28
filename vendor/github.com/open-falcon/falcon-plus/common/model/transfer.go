@@ -12,20 +12,25 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package g
+package model
 
-import log "github.com/sirupsen/logrus"
+import (
+	"fmt"
+)
 
-func InitLog(level string) (err error) {
-	switch level {
-	case "info":
-		log.SetLevel(log.InfoLevel)
-	case "debug":
-		log.SetLevel(log.DebugLevel)
-	case "warn":
-		log.SetLevel(log.WarnLevel)
-	default:
-		log.Fatal("log conf only allow [info, debug, warn], please check your confguire")
-	}
-	return
+type TransferResponse struct {
+	Message string
+	Total   int
+	Invalid int
+	Latency int64
+}
+
+func (this *TransferResponse) String() string {
+	return fmt.Sprintf(
+		"<Total=%v, Invalid:%v, Latency=%vms, Message:%s>",
+		this.Total,
+		this.Invalid,
+		this.Latency,
+		this.Message,
+	)
 }

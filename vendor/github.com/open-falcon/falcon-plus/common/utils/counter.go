@@ -12,20 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package g
+package utils
 
-import log "github.com/sirupsen/logrus"
+import (
+	"fmt"
+)
 
-func InitLog(level string) (err error) {
-	switch level {
-	case "info":
-		log.SetLevel(log.InfoLevel)
-	case "debug":
-		log.SetLevel(log.DebugLevel)
-	case "warn":
-		log.SetLevel(log.WarnLevel)
-	default:
-		log.Fatal("log conf only allow [info, debug, warn], please check your confguire")
+func Counter(metric string, tags map[string]string) string {
+	if tags == nil || len(tags) == 0 {
+		return metric
 	}
-	return
+	return fmt.Sprintf("%s/%s", metric, SortedTags(tags))
 }

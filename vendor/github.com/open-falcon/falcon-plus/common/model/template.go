@@ -12,20 +12,27 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package g
+package model
 
-import log "github.com/sirupsen/logrus"
+import (
+	"fmt"
+)
 
-func InitLog(level string) (err error) {
-	switch level {
-	case "info":
-		log.SetLevel(log.InfoLevel)
-	case "debug":
-		log.SetLevel(log.DebugLevel)
-	case "warn":
-		log.SetLevel(log.WarnLevel)
-	default:
-		log.Fatal("log conf only allow [info, debug, warn], please check your confguire")
-	}
-	return
+type Template struct {
+	Id       int    `json:"id"`
+	Name     string `json:"name"`
+	ParentId int    `json:"parentId"`
+	ActionId int    `json:"actionId"`
+	Creator  string `json:"creator"`
+}
+
+func (this *Template) String() string {
+	return fmt.Sprintf(
+		"<Id:%d, Name:%s, ParentId:%d, ActionId:%d, Creator:%s>",
+		this.Id,
+		this.Name,
+		this.ParentId,
+		this.ActionId,
+		this.Creator,
+	)
 }

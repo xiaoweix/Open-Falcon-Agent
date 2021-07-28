@@ -1,0 +1,34 @@
+# github.com/mindprince/gonvml v0.0.0-20190828220739-9ebdce4bb989
+## explicit
+github.com/mindprince/gonvml
+# github.com/open-falcon/falcon-plus v0.2.1
+## explicit
+github.com/open-falcon/falcon-plus/common/model
+github.com/open-falcon/falcon-plus/common/utils
+# github.com/sirupsen/logrus v1.8.1
+## explicit
+github.com/sirupsen/logrus
+# github.com/toolkits/core v0.0.0-20141116054942-0ebf14900fe2
+## explicit
+github.com/toolkits/core
+# github.com/toolkits/file v0.0.0-20160325033739-a5b3c5147e07
+## explicit
+github.com/toolkits/file
+# github.com/toolkits/net v0.0.0-20160910085801-3f39ab6fe3ce
+## explicit
+github.com/toolkits/net
+# github.com/toolkits/nux v0.0.0-20200401110743-debb3829764a
+## explicit
+github.com/toolkits/nux
+# github.com/toolkits/slice v0.0.0-20141116085117-e44a80af2484
+## explicit
+github.com/toolkits/slice
+# github.com/toolkits/sys v0.0.0-20170615103026-1f33b217ffaf
+## explicit
+github.com/toolkits/sys
+# github.com/toolkits/time v0.0.0-20160524122720-c274716e8d7f
+## explicit
+github.com/toolkits/time
+# golang.org/x/sys v0.0.0-20191026070338-33540a1f6037
+golang.org/x/sys/unix
+golang.org/x/sys/windows

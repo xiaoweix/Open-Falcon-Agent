@@ -12,20 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package g
+package utils
 
-import log "github.com/sirupsen/logrus"
+import (
+	"crypto/md5"
+	"fmt"
+	"io"
+)
 
-func InitLog(level string) (err error) {
-	switch level {
-	case "info":
-		log.SetLevel(log.InfoLevel)
-	case "debug":
-		log.SetLevel(log.DebugLevel)
-	case "warn":
-		log.SetLevel(log.WarnLevel)
-	default:
-		log.Fatal("log conf only allow [info, debug, warn], please check your confguire")
-	}
-	return
+func Md5(raw string) string {
+	h := md5.New()
+	io.WriteString(h, raw)
+
+	return fmt.Sprintf("%x", h.Sum(nil))
 }

@@ -12,20 +12,21 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package g
+package model
 
-import log "github.com/sirupsen/logrus"
+import (
+	"fmt"
+)
 
-func InitLog(level string) (err error) {
-	switch level {
-	case "info":
-		log.SetLevel(log.InfoLevel)
-	case "debug":
-		log.SetLevel(log.DebugLevel)
-	case "warn":
-		log.SetLevel(log.WarnLevel)
-	default:
-		log.Fatal("log conf only allow [info, debug, warn], please check your confguire")
-	}
-	return
+// code == 0 => success
+// code == 1 => bad request
+type SimpleRpcResponse struct {
+	Code int `json:"code"`
+}
+
+func (this *SimpleRpcResponse) String() string {
+	return fmt.Sprintf("<Code: %d>", this.Code)
+}
+
+type NullRpcRequest struct {
 }
