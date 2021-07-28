@@ -1,4 +1,4 @@
-# open-falcon agent源码阅读与解析
+# open-falcon agent源码阅读及二次开发
 关于open-falcon的架构及说明可参考open-falcon[官方网站](http://open-falcon.org/)。 目前小米、美团、滴滴、360、金山云、新浪微博、京东、爱奇艺等都在使用open-falcon或者基于open-falcon的二次开发。open-falcon的架构清晰，代码难度不高，非常适合阅读学习。这里对open-falcon的源码进行解析。
 
 falcon-agent是一个Linux的监控插件. 它很像是 zabbix-agent 和 tcollector.
